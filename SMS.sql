@@ -34,4 +34,44 @@ foreign key (enrollment_id) references enrollments(enrollment_id)
 );
 
 select * from courses;
+select * from attendance;
+INSERT INTO enrollments (enrollment_id, student_id, course_id, semester)
+VALUES
+(1, 1, 101, 'Sem1'),
+(2, 1, 102, 'Sem1'),
+(3, 2, 101, 'Sem1'),
+(4, 2, 103, 'Sem1'),
+(5, 3, 101, 'Sem1'),
+(6, 3, 102, 'Sem1');
+
+INSERT INTO attendance (attendance_id, enrollment_id, attendance_date, status) VALUES
+(1, 1, '2025-01-01', 'Present'),
+(2, 1, '2025-01-02', 'Absent'),
+(3, 1, '2025-01-03', 'Present'),
+
+(4, 2, '2025-01-01', 'Present'),
+(5, 2, '2025-01-02', 'Present'),
+
+(6, 3, '2025-01-01', 'Absent'),
+(7, 3, '2025-01-02', 'Present'),
+
+(8, 4, '2025-01-01', 'Present'),
+(9, 4, '2025-01-02', 'Absent'),
+
+(10, 5, '2025-01-01', 'Present'),
+(11, 5, '2025-01-02', 'Present'),
+
+(12, 6, '2025-01-01', 'Absent'),
+(13, 6, '2025-01-02', 'Present');
+
+INSERT INTO marks (mark_id, enrollment_id, internal_marks, external_marks, grade) VALUES
+(1, 1, 23.00, 55.00, 'A'),
+(2, 2, 20.00, 48.00, 'B'),
+(3, 3, 18.00, 40.00, 'C'),
+(4, 4, 25.00, 60.00, 'A'),
+(5, 5, 22.00, 50.00, 'B'),
+(6, 6, 19.00, 42.00, 'C');
+
+select * from marks;
+
 
